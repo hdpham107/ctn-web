@@ -1,0 +1,67 @@
+.wrraper-layout {
+  overflow-y: scroll;
+  height: 100%;
+  .layout {
+    height: 100%;
+  }
+  .wrapper_form {
+    .icon-load-pass {
+      cursor: pointer;
+    }
+  }
+}
+.site-layout-content {
+  min-height: 280px;
+  padding: 24px 0;
+  background: #fff;
+  .form {
+    float: left!important;
+  }
+  .schedule {
+    margin-top: 100px;
+    float: right!important;
+    padding-left: 50px;
+    margin-right: 60px;
+  }
+}
+.logo {
+  font-size: 20px;
+  color: #038fde;
+}
+.ant-row-rtl #components-layout-demo-top .logo {
+  float: right;
+  margin: 16px 0 16px 24px;
+}
+
+.area-join-room {
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 38px;
+  margin-bottom: 29px;
+  input {
+    height: 50px;
+    border-radius: 30px;
+    background-color: #f5f2f2;
+  }
+  input::placeholder {
+    color: rgb(80, 79, 79);
+  }
+  button {
+    margin-top: 10px;
+  }
+}
+.right-zone .create-room {
+  position: absolute;
+  top: 30px;
+  right: 110px;
+  font-weight: 500;
+  cursor: pointer;
+  color: #d5d6d6;
+}
+
+.ant-layout-footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}

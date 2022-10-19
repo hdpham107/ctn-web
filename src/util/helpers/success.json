@@ -1,0 +1,9 @@
+{
+  "success": true,
+  "payload": {
+    "id": 1,
+    "username": "phamduy",
+    "fullname": "Phạm Duy",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxOTg2ODIsImlhdCI6MTUxNTQ3MTMzOSwiZXhwIjoxNTE2MDc2MTM5fQ.gkZjq686I4e4Mb2st8t9DX0FmH0c4P2d3dHvg4892vc"
+  }
+}
