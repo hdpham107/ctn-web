@@ -36,6 +36,9 @@ import {
 } from '../_actions';
 
 import { store } from '../store';
+import { HomeLayout } from './Layouts/HomeLayout';
+import { Festival } from '../components/pages/Festival';
+import RegisterResult from '../components/pages/RegisterResult';
 
 const mapStateToProps = state => {
   return {
@@ -100,10 +103,17 @@ class App extends React.Component {
           <AppRoute path="/rooms" component={Rooms} layout={MainLayout} />
           {/* <AppRoute path="/conversation" component={Message} layout={MainLayout} /> */}
           <AppRoute path="/dashboard" component={Dashboard} layout={MainLayout} />
+          <AppRoute path="/festival" component={Festival} layout={BlankLayout} />
+
           <AppRoute path="/step2" component={Step2} layout={RoomLayout} />
           <AppRoute path="/step3" component={Step3} layout={RoomLayout} />
           {/* <AppRoute path="/waiting-room/:code" component={WaitingRoom} layout={MainLayout}/> */}
-          <AppRoute path="/" component={LandingPage} auth={false} layout={BlankLayout}/>
+<<<<<<< HEAD
+          <AppRoute path="/" component={LandingPage} auth={false} layout={HomeLayout}/>
+=======
+          <AppRoute path="/" component={LandingPage} auth={false} layout={BlankLayout} exact={true}/>
+          <AppRoute path="/register-result" component={RegisterResult} layout={BlankLayout} />
+>>>>>>> feature/register-result
         </Switch>
       );
     }

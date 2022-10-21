@@ -19,7 +19,7 @@ import {
   Table,
 } from 'antd';
 
-import { scheduleActions } from '../../../_actions'
+import { scheduleActions } from '../../../_actions';
 
 const { Content } = Layout;
 const { TabPane } = Tabs;
@@ -30,7 +30,6 @@ function disabledDate(current) {
   return current && current === moment().endOf('day');
 }
 
-
 class AddSchedule extends React.Component {
   state = {
     checkNick: false,
@@ -39,17 +38,19 @@ class AddSchedule extends React.Component {
   };
 
   add = () => {
-    this.setState({loading: true});
+    this.setState({ loading: true });
     this.props.form.validateFields((err, values) => {
       if (!err) {
         const datas = {
           title: values.title,
           code: this.state.pass,
-          startTime: `${_.get(values, 'date_picker').format('YYYY-MM-DD')} ${_.get(values, 'time_picker').format('HH:mm:ss')}`,
+          startTime: `${_.get(values, 'date_picker').format(
+            'YYYY-MM-DD'
+          )} ${_.get(values, 'time_picker').format('HH:mm:ss')}`,
           time: values.time,
-        }
+        };
         this.props.addSchedule(datas).then(() => {
-          this.setState({loading: false});
+          this.setState({ loading: false });
         });
       }
     });
@@ -61,11 +62,10 @@ class AddSchedule extends React.Component {
 
   render() {
     const { getFieldDecorator } = this.props.form;
-    
 
     return (
       <Row className="col-lg-12">
-        <Col className='form' span={12} offset={6}>
+        <Col className="form" span={12} offset={6}>
           <Content
             className="site-layout-background"
             style={{
@@ -73,22 +73,30 @@ class AddSchedule extends React.Component {
               minHeight: 280,
             }}
           >
-            <div className='wrapper_form'>
-              <div className='title-form'>
+            <div className="wrapper_form">
+              <div className="title-form">
                 <h2>Đăng ký ban</h2>
                 <hr />
               </div>
-              <Select defaultValue="Hướng dẫn" style={{ width: '100%', marginTop: 10, marginBottom: 10 }} onChange={() => {}}>
-                    <Option value="personal">Hướng dẫn</Option>
-                    <Option value="group">Hành đường</Option>
-                  </Select>
+              <Select
+                defaultValue="Hướng dẫn"
+                style={{ width: '100%', marginTop: 10, marginBottom: 10 }}
+                onChange={() => {}}
+              >
+                <Option value="personal">Hướng dẫn</Option>
+                <Option value="group">Hành đường</Option>
+              </Select>
 
               <Form.Item>
-                <Button type="primary" loading={this.state.loading} onClick={() => {
-                  this.props.redirect({
-                    redirectTo: '/dashboard',
-                  })
-                }}>
+                <Button
+                  type="primary"
+                  loading={this.state.loading}
+                  onClick={() => {
+                    this.props.redirect({
+                      redirectTo: '/dashboard',
+                    });
+                  }}
+                >
                   Hoàn thành
                 </Button>
               </Form.Item>
@@ -102,14 +110,14 @@ class AddSchedule extends React.Component {
 
 const WrappedDynamicRule = Form.create({ name: 'dynamic_rule' })(AddSchedule);
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   ...state.common,
   schedules: _.get(state, 'schedules.data'),
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch) => ({
   loadSchedule: dispatch(scheduleActions.loadSchedule),
   addSchedule: dispatch(scheduleActions.addSchedule),
-  redirect: payload => dispatch({ type: 'REDIRECT_TO', payload }),
+  redirect: (payload) => dispatch({ type: 'REDIRECT_TO', payload }),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(WrappedDynamicRule);

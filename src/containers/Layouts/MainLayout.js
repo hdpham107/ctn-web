@@ -14,10 +14,10 @@ import { Switch } from 'react-router-dom';
 import { IntlProvider } from "react-intl";
 
 import AppLocale from "../../lngProvider";
-import "../../assets/vendors/style";
-import '../../styles/wieldy.less';
-import '../../style/home.scss';
-import '../../style/layout.scss';
+// import "../../assets/vendors/style";
+// import '../../styles/wieldy.less';
+// import '../../style/home.scss';
+// import '../../style/layout.scss';
 
 import Sidebar from "../Sidebar/index";
 import HorizontalDefault from "../Topbar/HorizontalDefault/index";
